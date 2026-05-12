@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: healthshift-backend
+spec:
+  replicas: 2 # Yüksek erişilebilirlik için iki kopya
+  selector:
+    matchLabels:
+      app: healthshift-backend
+  template:
+    metadata:
+      labels:
+        app: healthshift-backend
+    spec:
+      containers:
+      - name: healthshift-container
+        image: dilaraceyda/healthshift-backend:latest 
+        ports:
+        - containerPort: 8000 # Dockerfile'da EXPOSE ettiğin port ile aynı olmalı
+        env:
+        # Supabase bilgilerini Secret'tan çekiyoruz (Güvenli yöntem)
+        - name: SUPABASE_URL
+          valueFrom:
+            secretKeyRef:
+              name: healthshift-secrets
+              key: SUPABASE_URL
+        - name: SUPABASE_KEY
+          valueFrom:
+            secretKeyRef:
+              name: healthshift-secrets
+              key: SUPABASE_KEY

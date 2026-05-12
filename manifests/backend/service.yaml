@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: healthshift-backend-svc
+spec:
+  selector:
+    app: healthshift-backend
+  ports:
+    - protocol: TCP
+      port: 80       # Servisin cluster içindeki portu
+      targetPort: 80 # Docker container'ının dinlediği port
+  type: ClusterIP
