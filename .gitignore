@@ -1,0 +1,30 @@
+# --- Secrets & Credentials ---
+manifests/backend/secrets.yaml
+.env
+*.pem
+*.key
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+build/
+dist/
+
+# --- Operating System ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- IDEs ---
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# --- Docker & K8s Temporary ---
+.docker/
+kubeconfig

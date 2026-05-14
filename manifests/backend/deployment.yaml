@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: healthshift-container
-        image: dilaraceyda/healthshift-backend:latest 
+        image: dilaraceyda/healthshift-backend:v2
         ports:
         - containerPort: 8000 # Dockerfile'da EXPOSE ettiğin port ile aynı olmalı
         env:
