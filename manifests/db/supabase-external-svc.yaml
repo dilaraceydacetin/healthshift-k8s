@@ -4,4 +4,4 @@ metadata:
   name: supabase-service
 spec:
   type: ExternalName
-  externalName: wymlpdcbmidiugrnomsq.supabase.co
+  externalName: db.wymlpdcbmidiugrnomsq.supabase.co
